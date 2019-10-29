@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,x,j,i;
+    cin>>n>>x;
+    int a[n],temp;
+     for( i=0;i<n;i++)
+     cin>>a[i];
+     for( i=0;i<n-1;i++)
+     { if(x>0)
+       {
+         int min=i;
+         for(j=i+1;j<n;j++)
+         {
+             if(a[j]<a[min])
+             {min=j;
+             }
+         }
+         
+                temp=a[min];
+                a[min]=a[i];
+                a[i]=temp;
+       }
+         else
+         break;
+         x--;
+       }
+     
+        for(i=0;i<n;i++)
+        cout<<a[i]<<" ";
+    
+    return 0;
+}
